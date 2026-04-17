@@ -1,0 +1,30 @@
+<input type="search" id="search">
+<div class="container">
+    <h1>one</h1>
+    <h1>two</h1>
+    <h1>three</h1>
+    <h1>four</h1>
+    <h1>five</h1>
+</div>
+
+<script>
+    var search=document.getElementById("search")
+    var container=document.querySelector(".container")
+    var h1=document.querySelectorAll("h1")
+
+    search.addEventListener("keyup",function(){
+
+        var entervalue=event.target.value.toUpperCase()
+        
+        for(i=0;i<h1.length;i++){
+             if(h1[i].textContent.toUpperCase().indexOf(entervalue)<0){
+                h1[i].style.display="none"
+
+             }
+             else{
+                h1[i].style.display="block"
+             }
+        }
+
+    })
+</script>
